@@ -22,6 +22,6 @@ This colour pallete Shows the chosen colours that will be shown through out this
 I have chosen the "Russo One" font for my header to make it pop out and very noticable to cause the user to remember the name. While the rest of the projects text will be using the "Faustina" Font.
 
 Header: Russo One
-![colour pallete](/Media/Font%20header.png)
+![Fonts](/Media/Font%20header.png)
 Body: Faustina
-![colour pallete](/Media/Rest%20font.png)
+![Fonts](/Media/Rest%20font.png)
