@@ -10,3 +10,18 @@ I used Figma to create a mockup of the websites front page from the perspective 
 
 ![Wirframes](/Media/Habit%20tracker.png)
 ![Wirframes](/Media/habit%20tracks%20phone.png)
+
+**COLOUR SCHEME**
+
+This colour pallete Shows the chosen colours that will be shown through out this project. The colour pallete is in order from most seen to least.
+
+![colour pallete](/Media/color%20pallete.png)
+
+**fonts**
+
+I have chosen the "Russo One" font for my header to make it pop out and very noticable to cause the user to remember the name. While the rest of the projects text will be using the "Faustina" Font.
+
+Header: Russo One
+![colour pallete](/Media/Font%20header.png)
+Body: Faustina
+![colour pallete](/Media/Rest%20font.png)
