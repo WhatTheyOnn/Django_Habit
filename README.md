@@ -2,6 +2,16 @@
 
 HABIT TRACKER is for the people that are eager to inplement habits into there day to day activities. This App will keep track and help motivate people to remain steadfast developing these habits into peoples lives.
 
+# User Stories
+
+As a user, I want to set specific habits I want to develop, so I can track my progress toward achieving them.
+
+As a user, I want to set a schedule for each habit so I can follow it consistently.
+
+As a user, I want to mark certain habits as high priority, so I can focus on the most important ones.
+
+As a user, I want to set big goals connected to my habits, so I can see how my daily progress helps me achieve them.
+
 # User Design
 
 **WIREFRAMES**
