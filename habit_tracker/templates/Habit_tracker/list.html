@@ -1,7 +1,8 @@
 <h3>Habit</h3>
 
-<form>
-    {{form}}
+<form method="POST" action="/">
+    {% csrf_token %}
+    {{form.title}}
     <input type="submit" value="Add Habit">
 </form>
 
