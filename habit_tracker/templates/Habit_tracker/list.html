@@ -6,8 +6,10 @@
     <input type="submit" value="Add Habit">
 </form>
 
-<ul>
+
     {% for habit in habits %}
-        <li>{{ habit }}</li>
+    <div>
+        <a href="{% url 'habit_update' habit.id %}"> Update</a>
+        <p>{{ habit }}</p>
+    </div>
     {% endfor %}
-</ul>

@@ -3,5 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.index)
+    path('', views.index, name='list'),
+    path('habit_update/<str:pk>/', views.updateHabit, name='habit_update'),
 ]

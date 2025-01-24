@@ -17,3 +17,17 @@ def index(request):
 
     context = {'habits': habit, 'form': form}
     return render(request, 'Habit_tracker/list.html', context)
+
+def updateHabit(request, pk):
+    habit = Habit.objects.get(id=pk)
+
+    form = Habitform(instance=habit)
+
+    if request.method == 'POST':
+        form = Habitform(request.POST, instance=habit)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+
+    context = {'form': form}
+    return render(request, 'Habit_tracker/Habit_update.html', context)
