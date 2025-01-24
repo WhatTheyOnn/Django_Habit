@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-whattheyonn-djangohabit-fus5bad9qy1.ws.codeinstitute-ide.net', 'habitracker-e791def7e3c6.herokuapp.com', '8000-whattheyonn-djangohabit-skszm1qg2nu.ws.codeinstitute-ide.net', '127.0.0.1']
+ALLOWED_HOSTS = ['8000-whattheyonn-djangohabit-fus5bad9qy1.ws.codeinstitute-ide.net', 'habitracker-e791def7e3c6.herokuapp.com', '8000-whattheyonn-djangohabit-skszm1qg2nu.ws.codeinstitute-ide.net', '127.0.0.1','localhost']
 CSRF_TRUSTED_ORIGINS = ['https://*.codeinstitute-ide.net', 'https://*.herokuapp.com']
 
 # Application definition
