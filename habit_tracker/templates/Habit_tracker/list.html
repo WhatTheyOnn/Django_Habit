@@ -10,6 +10,7 @@
     {% for habit in habits %}
     <div>
         <a href="{% url 'habit_update' habit.id %}"> Update</a>
+        <a href="{% url 'delete' habit.id %}"> Delete</a>
         <p>{{ habit }}</p>
     </div>
     {% endfor %}

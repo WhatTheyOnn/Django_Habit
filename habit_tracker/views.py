@@ -31,3 +31,9 @@ def updateHabit(request, pk):
 
     context = {'form': form}
     return render(request, 'Habit_tracker/Habit_update.html', context)
+
+def deleteHabit(request, pk):
+    item = Habit.objects.get(id=pk)
+
+    context = {'item': item}
+    return render(request, 'Habit_tracker/delete.html', context)
