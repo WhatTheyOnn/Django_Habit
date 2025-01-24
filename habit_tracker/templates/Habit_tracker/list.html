@@ -1,1 +1,12 @@
 <h3>Habit</h3>
+
+<form>
+    {{form}}
+    <input type="submit" value="Add Habit">
+</form>
+
+<ul>
+    {% for habit in habits %}
+        <li>{{ habit }}</li>
+    {% endfor %}
+</ul>
