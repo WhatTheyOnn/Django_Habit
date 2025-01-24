@@ -60,6 +60,47 @@
             border-radius: 25px;
             cursor: pointer;
         }
+        .habit-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px auto;
+            width: 80%;
+        }
+        .habit-card {
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 200px;
+            position: relative;
+        }
+        .habit-card a {
+            text-decoration: none;
+            font-size: 12px;
+            color: black;
+            background-color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .habit-card a.delete {
+            background-color: red;
+            color: white;
+            font-size: 10px;
+            padding: 3px 7px;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            border-radius: 50%;
+        }
+        strike {
+            color: lightgray;
+            text-decoration: line-through;}
     </style>
 </head>
 <body>
@@ -71,20 +112,25 @@
 <form method="POST" action="/">
     {% csrf_token %}
     {{form.title}}
-    <input type="submit" value="Add Habit">
+    
+    <input type="submit" value="Submit">
 </form>
 
-
+<div class="habit-container">
     {% for habit in habits %}
-    <div>
-        <a href="{% url 'habit_update' habit.id %}"> Update</a>
-        <a href="{% url 'delete' habit.id %}"> Delete</a>
+    <div class="habit-card">
+        
 
         {% if habit.completed == True %}
         <strike>{{habit}}</strike>
         {% else %}
         <span>{{habit}}</span>
+    
         {% endif %}
-        
+        <a href="{% url 'habit_update' habit.id %}"> Update</a>
+        <a href="{% url 'delete' habit.id %}"> &times;</a>       
     </div>
     {% endfor %}
+</div>
+</body>
+</html>
