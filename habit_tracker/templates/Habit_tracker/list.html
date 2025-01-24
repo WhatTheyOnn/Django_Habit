@@ -24,6 +24,7 @@
         header h1 {
             font-size: 24px;
             font-weight: bold;
+            color: #00ff08;
             font-family: 'Russo One', sans-serif;
             margin: 0;
         }
@@ -45,7 +46,7 @@
         form input[type="text"] {
             font-size: 16px;
             padding: 10px;
-            border: 1px solid #ddd;
+            border: 1px solid #000000;
             border-radius: 25px;
             width: 300px;
             text-align: center;
@@ -89,9 +90,9 @@
             cursor: pointer;
         }
         .habit-card a.delete {
-            background-color: red;
-            color: white;
-            font-size: 10px;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            font-size: 17px;
             padding: 3px 7px;
             position: absolute;
             top: 5px;
@@ -128,7 +129,7 @@
     
         {% endif %}
         <a href="{% url 'habit_update' habit.id %}"> Update</a>
-        <a href="{% url 'delete' habit.id %}"> &times;</a>       
+        <a href="{% url 'delete' habit.id %}" class="delete"> &times;</a>       
     </div>
     {% endfor %}
 </div>

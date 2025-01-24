@@ -8,3 +8,6 @@ class Habitform(ModelForm):
     class Meta:
         model = Habit
         fields = '__all__'
+        labels = {
+            'title': '',
+        }
