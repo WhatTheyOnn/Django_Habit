@@ -5,9 +5,10 @@ import sys
 import subprocess
 from dotenv import load_dotenv
 
+
 def main():
     """Run administrative tasks."""
-    load_dotenv()
+    load_dotenv()  
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_habit.settings')
     try:
         import django
@@ -26,6 +27,7 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
     execute_from_command_line(sys.argv)
+
 
 if __name__ == '__main__':
     main()

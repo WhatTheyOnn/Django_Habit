@@ -11,6 +11,12 @@
     <div>
         <a href="{% url 'habit_update' habit.id %}"> Update</a>
         <a href="{% url 'delete' habit.id %}"> Delete</a>
-        <p>{{ habit }}</p>
+
+        {% if habit.completed == True %}
+        <strike>{{habit}}</strike>
+        {% else %}
+        <span>{{habit}}</span>
+        {% endif %}
+        
     </div>
     {% endfor %}

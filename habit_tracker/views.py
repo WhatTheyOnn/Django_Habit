@@ -35,5 +35,9 @@ def updateHabit(request, pk):
 def deleteHabit(request, pk):
     item = Habit.objects.get(id=pk)
 
+    if request.method == 'POST':
+        item.delete()
+        return redirect('/')
+
     context = {'item': item}
     return render(request, 'Habit_tracker/delete.html', context)
