@@ -34,6 +34,42 @@
             background-color: black;
             padding: 10px 15px;
             border-radius: 20px;}
+            .delete-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 400px;
+        }
+        .delete-container p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: black;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .delete-container a, .delete-container input[type="submit"] {
+            font-size: 16px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: black;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        .delete-container a {
+            background-color: red;
+        }
 </style>
 </head>
 <body>
@@ -44,15 +80,15 @@
     
 <div class="delete-container">
 <p> Are you sure you want to delete "{{item}}"?</p>
+   <div class="button-group">
 
+    <form method="POST" action="" style="display: inline;">
+          {% csrf_token %}
+          <input type="submit" value="Confirm">
+    </form>
 <a href="{% url 'list' %}" > Cancel </a>
+   </div>
 
-<form method="POST" action="">
-{% csrf_token %}
-
-<input type="submit" value="Confirm">
-
-</form>
 </div>
 </body>
 </html>
