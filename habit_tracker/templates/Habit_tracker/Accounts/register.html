@@ -1,15 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Faustina:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Faustina', serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);}
+        header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00ff08;
+            font-family: 'Russo One', sans-serif;
+            margin: 0;}
+        header a {
+            text-decoration: none;
+            font-size: 14px;
+            color: white;
+            background-color: black;
+            padding: 10px 15px;
+            border-radius: 20px;}
+</style>
+</head>
+<body>
+    <header>
+        <h1>HABIT TRACKER</h1>
+        <a href="/">Back to Home</a>
+    </header>
+    
 <h3>Sign Up</h3>
-
-
 <form method="POST">
-    {% csrf_token %}
-    {{form.username.label}}
-    {{form.username}}
-    {{form.email.label}}
-    {{form.email}}
-    {{form.password1.label}}
-    {{form.password1}}
-    {{form.password2.label}}
-    {{form.password2}}
-    <input type="submit" value="Sign Up">
+        {% csrf_token %}
+        <label for="id_username">{{ form.username.label }}</label>
+        {{ form.username }}
+        <label for="id_email">{{ form.email.label }}</label>
+        {{ form.email }}
+        <label for="id_password1">{{ form.password1.label }}</label>
+        {{ form.password1 }}
+        <label for="id_password2">{{ form.password2.label }}</label>
+        {{ form.password2 }}
+        <input type="submit" value="Sign Up">
 </form>
+</body>
