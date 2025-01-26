@@ -1,8 +1,8 @@
 from django.shortcuts import render , redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
-from .models import *
-from .forms import *
+from .models import Habit
+from .forms import Habitform, CreateUserForm
 from django.contrib.auth import authenticate, login, logout
 
 from django.contrib import messages
@@ -10,7 +10,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-from .forms import CreateUserForm
+
 
 
 
@@ -52,21 +52,22 @@ def logoutUser(request):
     return redirect('login')
 
 
-
 def index(request):
-    habit = Habit.objects.all()
+    habits = Habit.objects.filter(user=request.user) if request.user.is_authenticated else []
     form = Habitform()
 
     if request.method == 'POST':
         if request.user.is_authenticated:
             form = Habitform(request.POST)
             if form.is_valid():
-                form.save()
-            return redirect('/')
+                habit = form.save(commit=False)
+                habit.user = request.user  
+                habit.save()
+                return redirect('/')
         else:
             return redirect('login')
 
-    context = {'habits': habit, 'form': form}
+    context = {'habits': habits, 'form': form}
     return render(request, 'Habit_tracker/list.html', context)
 
 
