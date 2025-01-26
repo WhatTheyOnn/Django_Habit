@@ -34,6 +34,69 @@
             background-color: black;
             padding: 10px 15px;
             border-radius: 20px;}
+            .login-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 400px;
+        }
+        .login-container h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: black;
+            font-family: 'Russo One', sans-serif;
+        }
+        .login-container label {
+            font-size: 16px;
+            margin-top: 10px;
+            display: block;
+            color: black;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            font-size: 16px;
+            padding: 10px;
+            width: 100%;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            box-sizing: border-box;
+        }
+        .login-container input[type="submit"] {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .register-section {
+            margin-top: 15px;
+            text-align: center;
+        }
+        .register-section p {
+            font-size: 14px;
+            margin: 10px 0;
+            color: black;
+        }
+        .register-section a {
+            text-decoration: none;
+            font-size: 14px;
+            color: white;
+            background-color: black;
+            padding: 10px 20px;
+            border-radius: 25px;
+        }
+
 </style>
 </head>
 <body>
@@ -43,9 +106,10 @@
     </header>
     
 
-<h3>Login</h3>
 
 
+<div class="login-container">
+    <h3>Login</h3>
 <form method="POST">
     {% csrf_token %}
     <label for="id_username">Username</label>
@@ -54,8 +118,10 @@
     <input type="password" id="id_password" name="password" placeholder="Enter your password" required>
     <input type="submit" value="Login">
 </form>
+<div class="register-section">
 <p>Don't have an account?</p>
 <a href="/register">Sign Up</a>
-
+</div>
+</div>
 </body>
 </html>
