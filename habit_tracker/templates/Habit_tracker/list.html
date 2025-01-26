@@ -37,6 +37,16 @@
             padding: 10px 15px;
             border-radius: 20px;
         }
+        header .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        header .user-info span {
+            font-size: 14px;
+            font-family: 'Faustina', serif;
+            color: #333;
+        }
         form {
             display: flex;
             justify-content: center;
@@ -107,12 +117,14 @@
 <body>
 <header>
     <h1>HABIT TRACKER</h1>
+    <div class="user-info">
     {% if user.is_authenticated %}
+    <span>Hello, {{user.username}}</span>
     <a href="{% url 'logout' %}">Logout</a>
-    <span>Hi, {{user.username}}</span>
     {% else %}
     <a href="{% url 'login' %}">Login</a>
      {% endif %}
+     </div>
 </header>
 
 <form method="POST" action="/">
