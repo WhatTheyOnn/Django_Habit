@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 
 from django.contrib import messages
 
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 from .forms import CreateUserForm
@@ -50,20 +51,26 @@ def logoutUser(request):
     logout(request)
     return redirect('login')
 
+
+
 def index(request):
     habit = Habit.objects.all()
-
     form = Habitform()
 
     if request.method == 'POST':
-        form = Habitform(request.POST)
-        if form.is_valid():
-            form.save()
-        return redirect('/')
+        if request.user.is_authenticated:
+            form = Habitform(request.POST)
+            if form.is_valid():
+                form.save()
+            return redirect('/')
+        else:
+            return redirect('login')
 
     context = {'habits': habit, 'form': form}
     return render(request, 'Habit_tracker/list.html', context)
 
+
+@login_required(login_url='login')
 def updateHabit(request, pk):
     habit = Habit.objects.get(id=pk)
 
@@ -78,6 +85,7 @@ def updateHabit(request, pk):
     context = {'form': form}
     return render(request, 'Habit_tracker/Habit_update.html', context)
 
+@login_required(login_url='login')
 def deleteHabit(request, pk):
     item = Habit.objects.get(id=pk)
 
