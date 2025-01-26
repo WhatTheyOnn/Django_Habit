@@ -33,14 +33,61 @@
             background-color: black;
             padding: 10px 15px;
             border-radius: 20px;}
+            .register-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 400px;
+        }
+        .register-container h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: black;
+            font-family: 'Russo One', sans-serif;
+        }
+        .register-container label {
+            font-size: 16px;
+            margin-top: 10px;
+            display: block;
+            color: black;
+        }
+        .register-container input[type="text"],
+        .register-container input[type="email"],
+        .register-container input[type="password"] {
+            font-size: 16px;
+            padding: 10px;
+            width: 100%;
+            margin: 5px 0 15px 0;
+            border: 1px solid #000000;
+            border-radius: 25px;
+            box-sizing: border-box;
+        }
+        .register-container input[type="submit"] {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 100%;
+        }
 </style>
 </head>
 <body>
     <header>
         <h1>HABIT TRACKER</h1>
-        <a href="/">Back to Home</a>
+        <a href="/">Back Home</a>
     </header>
     
+<div class="register-container">    
 <h3>Sign Up</h3>
 <form method="POST">
         {% csrf_token %}
@@ -53,5 +100,6 @@
         <label for="id_password2">{{ form.password2.label }}</label>
         {{ form.password2 }}
         <input type="submit" value="Sign Up">
+        </div>
 </form>
 </body>
