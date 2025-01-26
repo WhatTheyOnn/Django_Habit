@@ -46,6 +46,10 @@ def loginPage(request):
     context = {}
     return render(request, 'Habit_tracker/Accounts/login.html', context)
 
+def logoutUser(request):
+    logout(request)
+    return redirect('login')
+
 def index(request):
     habit = Habit.objects.all()
 
