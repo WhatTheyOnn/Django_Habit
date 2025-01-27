@@ -39,8 +39,22 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-whattheyonn-djangohabit-fus5bad9qy1.ws.codeinstitute-ide.net', 'habitracker-e791def7e3c6.herokuapp.com', '8000-whattheyonn-djangohabit-skszm1qg2nu.ws.codeinstitute-ide.net', '127.0.0.1','localhost']
-CSRF_TRUSTED_ORIGINS = ['https://*.codeinstitute-ide.net', 'https://*.herokuapp.com']
+ALLOWED_HOSTS = [
+    '8000-whattheyonn-djangohabit-fus5bad9qy1.ws.codeinstitute-ide.net',
+    'habitracker-e791def7e3c6.herokuapp.com',
+    '8000-whattheyonn-djangohabit-skszm1qg2nu.ws.codeinstitute-ide.net',
+    '127.0.0.1',
+    'localhost'
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-whattheyonn-djangohabit-fus5bad9qy1.ws.codeinstitute-ide.net',
+    'https://habitracker-e791def7e3c6.herokuapp.com',
+    'https://8000-whattheyonn-djangohabit-skszm1qg2nu.ws.codeinstitute-ide.net',
+    'http://127.0.0.1',
+    'http://localhost'
+]
+
 
 # Application definition
 
@@ -130,6 +144,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Security settings for HTTPS
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
