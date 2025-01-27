@@ -15,8 +15,14 @@ import os
 import dj_database_url
 from dotenv import load_dotenv
 
+import os
+import dj_database_url
+
+
 if os.path.isfile("env.py"):
    import env
+
+
 
 load_dotenv()  # Add this line to load the .env file
 
