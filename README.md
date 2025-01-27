@@ -40,7 +40,31 @@ Header: Russo One
 Body: Faustina
 ![Fonts](/Media/Rest%20font.png)
 
-# Interface so far
+
+# App Implementations track record via Kanban board on GitHub Projects
+
+For keeping track of implementations, I am using the Kanban board on GitHub Projects to give efficient management to the development of the project. view the [project board here](https://github.com/users/WhatTheyOnn/projects/2)
+
+The kanban board helped ensure continuous progress and adaptability throughout the project. The board has different collums for each task to identify where they was:
+
+![projectboard](/Media/project%20board.png)
+
+
+**To Do:** In this column, we listed tasks and user stories that were identified but not yet prioritized for development.
+
+**In Progress:** This column tracked tasks that were actively being worked on.
+It helped to show ongoing development efforts and keep focus on current objectives.
+
+**Complete:** Tasks that were successfully finished were moved to this section for review or testing.
+This column showed the progress made and served as a record of what had been accomplished.
+
+**Future Implementation:** In this column, we kept potential features and ideas for future releases.
+It allowed for long-term planning while keeping immediate priorities clear.
+
+
+
+
+# Interface 
 
 So far the website mimics the majority of the wire frames. 
 
@@ -115,5 +139,5 @@ When selecting the delete button you will be taken to the this page giving you 2
 
 ![delete](/WebsiteMedia/Delete%20section.png)
 
-selecting either one of these will take you back to the home page, but depending on what you had picked you the habit will or will not be there anymore.
+selecting either one of these will take you back to the home page, but depending on what you had picked, the habit will or will not be there anymore.
 
