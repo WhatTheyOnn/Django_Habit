@@ -8,7 +8,7 @@ from .models import Habit
 class Habitform(ModelForm):
     class Meta:
         model = Habit
-        fields = ['title', 'completed']
+        fields = ['title', 'completed', 'high_priority']
         labels = {
             'title': '',
         }

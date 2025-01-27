@@ -109,6 +109,11 @@
             right: 5px;
             border-radius: 50%;
         }
+        .high-priority {
+            color: #00ff08;
+            font-size: 20px;
+            margin-left: 5px;
+        }
         strike {
             color: lightgray;
             text-decoration: line-through;}
@@ -137,15 +142,15 @@
 <div class="habit-container">
     {% for habit in habits %}
     <div class="habit-card">
-        
-
-        {% if habit.completed == True %}
+        {% if habit.completed %}
         <strike>{{habit}}</strike>
         {% else %}
         <span>{{habit}}</span>
-    
         {% endif %}
         <a href="{% url 'habit_update' habit.id %}"> Update</a>
+        {% if habit.high_priority %}
+        <span class="high-priority">★</span> 
+        {% endif %}
         <a href="{% url 'delete' habit.id %}" class="delete"> &times;</a>       
     </div>
     {% endfor %}
