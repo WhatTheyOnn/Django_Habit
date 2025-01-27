@@ -1,1 +1,1 @@
-web: gunicorn Django_Habit.wsgi
+web: gunicorn django_habit.wsgi
