@@ -144,7 +144,37 @@ When selecting the delete button you will be taken to the this page giving you 2
 
 selecting either one of these will take you back to the home page, but depending on what you had picked, the habit will or will not be there anymore.
 
+**Updates**
 
+I coded in a new feature for users that want to label certain habits as high priority, this feature is simular to the completed option but provides a different meaning and effect to the viewing of the habit.
+
+What the form now looks like:
+
+![habitupdatev2](/WebsiteMedia/updated%20update%20section.png)
+
+When the completed checkbox is ticked, the habit will display as:
+
+![completedhabit](/WebsiteMedia/crossed.png)
+
+When the high priority checkbox is ticked, the habit will display as:
+
+![highpriohabit](/WebsiteMedia/star.png)
+
+To do this i added a new class option to models.py
+
+![classcode](/WebsiteMedia/new%20class%20option.png)
+
+Then I added the high priority option to the form via the forms.py
+
+![forms.pycode](/WebsiteMedia/habit%20update%20code1.png)
+
+Then i added the star with if statements in the list.html page
+
+![list.htmlcode](/WebsiteMedia/list.html%20high%20prio%20code.png)
+
+and styled it to fit the habit's accordingly
+
+![styleforhighprio](/WebsiteMedia/style%20for%20high%20prio.png)
 
 # Testing
 
