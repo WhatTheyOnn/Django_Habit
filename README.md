@@ -36,8 +36,11 @@ This colour pallete Shows the chosen colours that will be shown through out this
 I have chosen the "Russo One" font for my header to make it pop out and very noticable to cause the user to remember the name. While the rest of the projects text will be using the "Faustina" Font.
 
 Header: Russo One
+
 ![Fonts](/Media/Font%20header.png)
+
 Body: Faustina
+
 ![Fonts](/Media/Rest%20font.png)
 
 
@@ -141,3 +144,22 @@ When selecting the delete button you will be taken to the this page giving you 2
 
 selecting either one of these will take you back to the home page, but depending on what you had picked, the habit will or will not be there anymore.
 
+
+
+# Testing
+
+To run the python test i used this command in the terminal "python manage.py test"
+
+![Pythontest](/Media/tesst%202%201.png)
+
+I used this code to test:
+
+Model Creation: This test_habit_creation method checks if a Habit instance can be created and if its title is set correctly
+
+String Representation: This test_habit_str method verifies that the str method of the Habit model returns the correct string representation.
+
+Default Values: This test_habit_default_values method checks that the default values for completed and created fields are set correctly.
+
+The result:
+
+![Pythontest](/Media/tests%202.png)
