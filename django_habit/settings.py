@@ -53,8 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'habit_tracker' ,
-    'django.contrib.staticfiles',
+    'habit_tracker',
     'cloudinary_storage',
     'cloudinary',
 
