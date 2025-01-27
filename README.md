@@ -103,8 +103,17 @@ This implementation was added using the in place django setup.
 ![flashmessagecode](/WebsiteMedia/login%20flashmessage%20code.png)
 ![flashmessagecode](/WebsiteMedia/register%20flash%20message%20code.png)
 
+When selecting the update button on a specific habit you will be taken to this page, which is coded in the Habit_update.html
 
 
+![Update](/WebsiteMedia/Update%20section.png)
+
+The update button will update whatever you had edited and will be seen in the homepage once you are redirected back after clicking the update button. but if you select the back home button on the top left all updates selected will be canceled.
 
 
+When selecting the delete button you will be taken to the this page giving you 2 options: confirm or cancel
+
+![delete](/WebsiteMedia/Delete%20section.png)
+
+selecting either one of these will take you back to the home page, but depending on what you had picked you the habit will or will not be there anymore.
 
