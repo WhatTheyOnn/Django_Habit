@@ -1,5 +1,5 @@
-from django.shortcuts import render , redirect
-from django.http import HttpResponse
+from django.shortcuts import render , redirect, get_object_or_404
+from django.http import HttpResponse, HttpResponseForbidden
 from django.contrib.auth.forms import UserCreationForm
 from .models import Habit
 from .forms import Habitform, CreateUserForm
@@ -73,10 +73,11 @@ def index(request):
 
 @login_required(login_url='login')
 def updateHabit(request, pk):
-    habit = Habit.objects.get(id=pk)
+    habit = get_object_or_404(Habit, id=pk)
+    if habit.user != request.user:
+        return HttpResponseForbidden()
 
     form = Habitform(instance=habit)
-
     if request.method == 'POST':
         form = Habitform(request.POST, instance=habit)
         if form.is_valid():
@@ -88,11 +89,13 @@ def updateHabit(request, pk):
 
 @login_required(login_url='login')
 def deleteHabit(request, pk):
-    item = Habit.objects.get(id=pk)
+    habit = get_object_or_404(Habit, id=pk)
+    if habit.user != request.user:
+        return HttpResponseForbidden()
 
     if request.method == 'POST':
-        item.delete()
+        habit.delete()
         return redirect('/')
 
-    context = {'item': item}
+    context = {'item': habit}
     return render(request, 'Habit_tracker/delete.html', context)
