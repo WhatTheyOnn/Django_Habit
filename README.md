@@ -258,3 +258,5 @@ The result:
 Summary
 HabitModelTest: Tests the creation, string representation, and default values of the Habit model.
 HabitPermissionTest: Tests that a user cannot edit or delete another user's habit.
+
+
