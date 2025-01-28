@@ -19,21 +19,24 @@
             align-items: center;
             padding: 10px 20px;
             background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);}
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
         header h1 {
             font-size: 24px;
             font-weight: bold;
             color: #00ff08;
             font-family: 'Russo One', sans-serif;
-            margin: 0;}
+            margin: 0;
+        }
         header a {
             text-decoration: none;
             font-size: 14px;
             color: white;
             background-color: black;
             padding: 10px 15px;
-            border-radius: 20px;}
-            .register-container {
+            border-radius: 20px;
+        }
+        .register-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -43,7 +46,8 @@
             background-color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            width: 400px;
+            width: 90%;
+            max-width: 400px;
         }
         .register-container h3 {
             font-size: 22px;
@@ -68,6 +72,17 @@
             border: 1px solid #000000;
             border-radius: 25px;
             box-sizing: border-box;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+        .register-container input[type="text"]:focus,
+        .register-container input[type="email"]:focus,
+        .register-container input[type="password"]:focus {
+            outline: none;
+            border-color: #000;
+            background-color: #333;
+            color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
         }
         .register-container input[type="submit"] {
             font-size: 16px;
@@ -78,6 +93,11 @@
             border-radius: 25px;
             cursor: pointer;
             width: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+        .register-container input[type="submit"]:hover {
+            background-color: #333;
+            color: #00ff08;
         }
         .login-section {
             margin-top: 15px;
@@ -95,8 +115,13 @@
             background-color: black;
             padding: 10px 20px;
             border-radius: 25px;
+            transition: all 0.3s ease-in-out;
         }
-</style>
+        .login-section a:hover {
+            background-color: #333;
+            color: #00ff08;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -104,25 +129,25 @@
         <a href="/">Back Home</a>
     </header>
     
-<div class="register-container">    
-<h3>Sign Up</h3>
-<form method="POST">
-        {% csrf_token %}
-        <label for="id_username">{{ form.username.label }}</label>
-        {{ form.username }}
-        <label for="id_email">{{ form.email.label }}</label>
-        {{ form.email }}
-        <label for="id_password1">{{ form.password1.label }}</label>
-        {{ form.password1 }}
-        <label for="id_password2">{{ form.password2.label }}</label>
-        {{ form.password2 }}
-        <input type="submit" value="Sign Up">
+    <div class="register-container">    
+        <h3>Sign Up</h3>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="id_username">{{ form.username.label }}</label>
+            {{ form.username }}
+            <label for="id_email">{{ form.email.label }}</label>
+            {{ form.email }}
+            <label for="id_password1">{{ form.password1.label }}</label>
+            {{ form.password1 }}
+            <label for="id_password2">{{ form.password2.label }}</label>
+            {{ form.password2 }}
+            <input type="submit" value="Sign Up">
         </form>
         {{ form.errors }}
         <div class="login-section">
             <p>Already have an account?</p>
             <a href="/login">Login</a>
         </div>
-</div>
-
+    </div>
 </body>
+</html>
