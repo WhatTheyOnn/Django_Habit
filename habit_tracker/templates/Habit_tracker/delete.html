@@ -12,52 +12,81 @@
             margin: 0;
             padding: 0;
             color: #333;
-        }
-        header {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            padding: 10px 20px;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        header {
+            width: 100%;
             background-color: white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+
         header h1 {
             font-size: 24px;
             font-weight: bold;
             color: #00ff08;
             font-family: 'Russo One', sans-serif;
-            margin: 0;}
+            margin: 0;
+        }
+
         header a {
             text-decoration: none;
             font-size: 14px;
             color: white;
             background-color: black;
             padding: 10px 15px;
-            border-radius: 20px;}
-            .delete-container {
+            border-radius: 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        header a:hover {
+            background-color: #333;
+            color: #00ff08;
+        }
+
+        .delete-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin: 50px auto;
             padding: 20px;
             background-color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            width: 400px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center; /* Center text inside the container */
+            margin-top: 30px;
         }
+
         .delete-container p {
             font-size: 18px;
             margin-bottom: 20px;
-            text-align: center;
             color: black;
         }
+
         .button-group {
             display: flex;
             justify-content: center;
             gap: 10px;
+            width: 100%; /* Ensures buttons align properly */
         }
-        .delete-container a, .delete-container input[type="submit"] {
+
+        .delete-container a,
+        .delete-container input[type="submit"] {
             font-size: 16px;
             padding: 10px 20px;
             text-decoration: none;
@@ -66,29 +95,56 @@
             border: none;
             border-radius: 25px;
             cursor: pointer;
+            transition: all 0.3s ease-in-out;
         }
+
         .delete-container a {
             background-color: red;
         }
-</style>
+
+        .delete-container a:hover {
+            background-color: darkred;
+        }
+
+        .delete-container input[type="submit"]:hover {
+            background-color: #333;
+            color: #00ff08;
+        }
+
+        @media (max-width: 500px) {
+            header h1 {
+                font-size: 20px;
+            }
+            header a {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+            .header-container {
+                padding: 10px;
+            }
+            .delete-container {
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>HABIT TRACKER</h1>
-        <a href="/">Back to List</a>
+        <div class="header-container">
+            <h1>HABIT TRACKER</h1>
+            <a href="/">Back to List</a>
+        </div>
     </header>
     
-<div class="delete-container">
-<p> Are you sure you want to delete "{{item}}"?</p>
-   <div class="button-group">
-
-    <form method="POST" action="" style="display: inline;">
-          {% csrf_token %}
-          <input type="submit" value="Confirm">
-    </form>
-<a href="{% url 'list' %}" > Cancel </a>
-   </div>
-
-</div>
+    <div class="delete-container">
+        <p>Are you sure you want to delete "{{ item }}"?</p>
+        <div class="button-group">
+            <form method="POST" action="" style="display: inline;">
+                {% csrf_token %}
+                <input type="submit" value="Confirm">
+            </form>
+            <a href="{% url 'list' %}">Cancel</a>
+        </div>
+    </div>
 </body>
 </html>
