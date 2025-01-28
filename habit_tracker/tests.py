@@ -1,15 +1,17 @@
 from django.test import TestCase
-from .models import Habit
-from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from .models import Habit
+from django.utils import timezone
 
 # Create your tests here.
-class habitmodeltest(TestCase):
+class HabitModelTest(TestCase):
     def setUp(self):
+        self.user = User.objects.create_user(username='testuser', password='password')
         self.habit = Habit.objects.create(
-            title = "Test Habit"
-            )
+            title="Test Habit",
+            user=self.user
+        )
 
     def test_habit_creation(self):
         self.assertIsInstance(self.habit, Habit)
@@ -36,25 +38,28 @@ class HabitPermissionTest(TestCase):
         
         self.client.login(username='user2', password='password2')
 
-      
+        
         response = self.client.post(reverse('habit_update', args=[self.habit1.id]), {
             'title': 'Updated Habit',
             'completed': False,
             'high_priority': False,
         })
 
+        
         self.habit1.refresh_from_db()
         self.assertEqual(self.habit1.title, 'Habit 1')
 
-      
+       
         self.assertEqual(response.status_code, 403)
 
     def test_user_cannot_delete_another_users_habit(self):
-
+       
         self.client.login(username='user2', password='password2')
 
         response = self.client.post(reverse('delete', args=[self.habit1.id]))
 
+        
         self.assertTrue(Habit.objects.filter(id=self.habit1.id).exists())
 
+        
         self.assertEqual(response.status_code, 403)

@@ -211,7 +211,7 @@ and it fixed the deployment issue.
 
 # Testing
 
-To run the python test i used this command in the terminal "python manage.py test"
+To run the python test use this command in the terminal "python manage.py test"
 
 ![Pythontest](/Media/tesst%202%201.png)
 
@@ -226,3 +226,35 @@ Default Values: This test_habit_default_values method checks that the default va
 The result:
 
 ![Pythontest](/Media/tests%202.png)
+
+**Premission Test**
+
+I added tests that confirm a user cannot edit or delete another user’s habit.
+
+![Premissiontestcode](/Media/premission%20test%201%20.png)
+
+![Premissiontestcode](/Media/premission%20test%202.png)
+
+HabitModelTest Class
+This class contains tests for the Habit model to ensure that it behaves as expected.
+
+setUp Method
+The setUp method is called before each test. It creates two users and a habit associated with the first user.
+
+
+test_user_cannot_edit_another_users_habit Method
+This test checks if a user cannot edit another user's habit.
+
+test_user_cannot_delete_another_users_habit Method
+This test checks if a user cannot delete another user's habit.
+
+To test this code, you would again need to type in "python manage.py test" in the terminal.
+
+The result:
+
+![Premissiontestresult](/Media/premission%20test.png)
+
+
+Summary
+HabitModelTest: Tests the creation, string representation, and default values of the Habit model.
+HabitPermissionTest: Tests that a user cannot edit or delete another user's habit.
