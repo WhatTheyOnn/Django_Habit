@@ -176,6 +176,39 @@ and styled it to fit the habit's accordingly
 
 ![styleforhighprio](/WebsiteMedia/style%20for%20high%20prio.png)
 
+# Bugs/Fixes
+
+I had a issue with deployments to heroku, this was the message i would get on my heroku app when deployed:
+
+![herokuappbug](/Media/bugs.png)
+
+at first when fixing this issue it was simple, i changed the procfile code from:
+
+![herokuappbug](/Media/procfile%201.png)
+
+to:
+
+![herokuappfixpart1](/Media/procfile%202.png)
+
+This was the 1st fix which was simple and easy to notice
+
+I used ai to help me with the next fix, i used the "heroku logs --tail --app habitracker" command to pin down the next issue and ai explained the issue was "The error message indicates that there is an issue with the PostgreSQL database backend. Specifically, it mentions an ImproperlyConfigured error related to loading the psycopg2 or psycopg module."
+
+to fix this i had specify a compatible Python version, such as Python 3.10.8:
+
+![Runtime](/Media/runtime.png)
+
+
+then i reinstalled the dependencies to ensure everything is up to date with this command "pip install -r requirements.txt":
+
+![terminal](/Media/terminal.png)
+
+And then used the "git add runtime.txt requirements.txt" > git commit -m "Specify Python version and ensure psycopg2-binary is correctly listed" > git push heroku main
+
+then i migrated it using the "heroku run python manage.py migrate --app habitracker" 
+
+and it fixed the deployment issue.
+
 # Testing
 
 To run the python test i used this command in the terminal "python manage.py test"
